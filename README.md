@@ -20,7 +20,7 @@ python main.py train #从零开始训练
 # 模型测试
 模型测试，在submit文件夹下生成提交结果
 ```shell
-python main.py test --ckpt=..model_path #加载预训练权重再训练
+python main.py test --ckpt=..model_path #加载预训练权重进行测试
 ```
 
 **一些细节**
