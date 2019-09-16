@@ -1,4 +1,4 @@
-来源：[合肥高新杯"心电人机智能大赛](https://tianchi.aliyun.com/competition/entrance/231754/introduction)
+来源：["合肥高新杯"心电人机智能大赛](https://tianchi.aliyun.com/competition/entrance/231754/introduction)
 
 **单模型20190916在线F1-Score=0.801**
 
@@ -25,7 +25,7 @@ python main.py test --ckpt=..model_path #加载预训练权重进行测试
 
 **一些细节**
 
- 1. 本次测试模型为1conv_resnet34，直接修改于torchvision
+ 1. 本次测试模型为1dconv_resnet34，直接修改于torchvision
  2. 训练数据没有只进行了简单的数据增强，最终无normalize
 
 
