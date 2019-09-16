@@ -136,7 +136,7 @@ def train(args):
 
 #用于测试加载模型
 def val(args):
-    list_threhold = np.arange(0.2, 0.8, 0.1)
+    list_threhold = [0.5]
     model = getattr(models, config.model_name)()
     if args.ckpt: model.load_state_dict(torch.load(args.ckpt, map_location='cpu')['state_dict'])
     model = model.to(device)
@@ -153,6 +153,7 @@ def test(args):
     from data_process import name2index
     name2idx = name2index(config.arrythmia)
     idx2name = {idx: name for name, idx in name2idx.items()}
+    utils.mkdirs(config.sub_dir)
     # model
     model = getattr(models, config.model_name)()
     model.load_state_dict(torch.load(args.ckpt, map_location='cpu')['state_dict'])
