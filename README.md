@@ -1,4 +1,4 @@
-数据来源：[合肥高新杯"心电人机智能大赛](https://tianchi.aliyun.com/competition/entrance/231754/introduction)
+来源：[合肥高新杯"心电人机智能大赛](https://tianchi.aliyun.com/competition/entrance/231754/introduction)
 
 **单模型20190916在线F1-Score=0.801**
 
