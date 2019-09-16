@@ -1,12 +1,33 @@
-第1次：2048采样+8导联+数据集增强   此次还需修改test,但我保留到了第2次
-    resnet34_201909151912 epoch': 49, 'loss': 0.01554390536769042, 'f1': 0.7454707303637108, 'lr': 0.0001, 'stage
-    online acc_0.80
-    resnet34_201909152228_1.1# 调整学习率 'epoch': 52, 'loss': 0.015881417053086416, 'f1': 0.7465145942205209
+数据来源：[合肥高新杯"心电人机智能大赛](https://tianchi.aliyun.com/competition/entrance/231754/introduction)
 
-第2次 在第1次上不采样
-    'epoch': 71, 'loss': 0.01522099386368479, 'f1': 0.7422585840953574, 'lr': 4e-05,
+**单模型20190916在线F1-Score=0.801**
 
-第3次 在第1次上使用resnet101  (因为训练的f1最高只有0.94)
+系统环境：*centos7 python3.6 pytorch1.0*
+
+**大致思路：每个导联作为一个通道，使用1维卷积进行训练**
+
+# 数据预处理
+使用8个导联的数据，简单进行train_val数据集划分
+```shell
+python data_process.py
+```
+
+# 模型训练
+```shell
+python main.py train #从零开始训练
+```
+
+# 模型测试
+模型测试，在submit文件夹下生成提交结果
+```shell
+python main.py test --ckpt=..model_path #加载预训练权重再训练
+```
+
+**一些细节**
+
+ 1. 本次测试模型为1conv_resnet34，直接修改于torchvision
+ 2. 训练数据没有只进行了简单的数据增强，最终无normalize
 
 
-第4次 在第1次上使用normalization
+参考论文：
+https://www.nature.com/articles/s41591-018-0268-3
