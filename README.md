@@ -26,7 +26,8 @@ python main.py test --ckpt=..model_path #加载预训练权重进行测试
 **一些细节**
 
  1. 本次测试模型为1dconv_resnet34，直接修改于torchvision
- 2. 训练数据没有只进行了简单的数据增强，最终无normalize
+ 2. 训练数据只进行了简单的数据增强，最终无normalize
+ 3. 由于设备问题，数据进行了重采样，推荐使用原数据
 
 
 参考论文：
