@@ -1,6 +1,8 @@
 来源：["合肥高新杯"心电人机智能大赛](https://tianchi.aliyun.com/competition/entrance/231754/introduction)
 
-**单模型20190916在线F1-Score=0.801**
+**A版单模型20190916在线F1-Score=0.801**
+
+**B版单模型20191010在线F1-Score=0.837**
 
 系统环境：*centos7 python3.6 pytorch1.0*
 
